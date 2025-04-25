@@ -4,7 +4,6 @@ radio.onReceivedNumber(function (receivedNumber) {
     }
 })
 input.onButtonPressed(Button.A, function () {
-    music.stopAllSounds()
     if (menu == 1) {
         scroll("l")
     } else if (MessagingApp == 1) {
@@ -19,6 +18,8 @@ input.onButtonPressed(Button.A, function () {
             # . . . .
             # . . . .
             `)
+    } else if (clickgame == 1) {
+    	
     } else {
         if (3 < cur.get(LedSpriteProperty.X)) {
             cur.set(LedSpriteProperty.X, 0)
@@ -59,13 +60,22 @@ function scroll (lr: string) {
         } else if (menuScroll == 4) {
             menuScroll = 5
             basic.showLeds(`
+                . . . # #
+                . # . . #
+                # # # . #
+                . # . . #
+                . . . . .
+                `)
+        } else if (menuScroll == 5) {
+            menuScroll = 6
+            basic.showLeds(`
                 # . # . #
                 # . # . #
                 # . . . #
                 . # # # .
                 . . . . .
                 `)
-        } else if (menuScroll == 5) {
+        } else if (menuScroll == 6) {
             menuScroll = 1
             basic.showLeds(`
                 . . # . .
@@ -77,13 +87,22 @@ function scroll (lr: string) {
         }
     } else if (lr == "l") {
         if (menuScroll == 1) {
-            menuScroll = 5
+            menuScroll = 6
             basic.showLeds(`
                 # . # . #
                 # . # . #
                 # . . . #
                 . # # # .
                 . . . . .
+                `)
+        } else if (menuScroll == 6) {
+            menuScroll = 5
+            basic.showLeds(`
+                . . . # #
+                . # . . #
+                # # # . #
+                . # . . #
+                . . . . #
                 `)
         } else if (menuScroll == 5) {
             menuScroll = 4
@@ -145,9 +164,17 @@ input.onButtonPressed(Button.AB, function () {
             menu = 0
             music2 = 1
         } else if (menuScroll == 5) {
+            menu = 0
+            clickgame = 1
+            clickerGameClick = 0
+            basic.clearScreen()
+            basic.showArrow(ArrowNames.East)
+        } else if (menuScroll == 6) {
             basic.clearScreen()
             menuScroll = 0
         }
+    } else if (clickgame == 1) {
+        basic.showNumber(clickerGameClick)
     }
 })
 input.onButtonPressed(Button.B, function () {
@@ -166,6 +193,9 @@ input.onButtonPressed(Button.B, function () {
             . . . . #
             . . . . #
             `)
+    } else if (clickgame == 1) {
+        clickerGameClick += 1
+        game.addScore(1)
     } else {
         if (3 < cur.get(LedSpriteProperty.Y)) {
             cur.set(LedSpriteProperty.Y, 0)
@@ -174,9 +204,11 @@ input.onButtonPressed(Button.B, function () {
         }
     }
 })
+let clickerGameClick = 0
 let apple: game.LedSprite = null
 let drawing: game.LedSprite = null
 let cur: game.LedSprite = null
+let clickgame = 0
 let music2 = 0
 let MessagingApp = 0
 let menuScroll = 0
@@ -195,19 +227,13 @@ basic.showLeds(`
 game.setScore(0)
 radio.setGroup(3058688)
 basic.forever(function () {
-    if (music2 == 0) {
-        if (MessagingApp == 0) {
-            if (menu == 0) {
-                if (drawgame == "false") {
-                    if (cur.isTouching(apple)) {
-                        game.addScore(1)
-                        apple.delete()
-                        cur.delete()
-                        cur = game.createSprite(0, 2)
-                        apple = game.createSprite(randint(0, 4), randint(0, 4))
-                    }
-                }
-            }
+    if (music2 == 0 && (MessagingApp == 0 && (menu == 0 && (drawgame == "false" && clickgame == 0)))) {
+        if (cur.isTouching(apple)) {
+            game.addScore(1)
+            apple.delete()
+            cur.delete()
+            cur = game.createSprite(0, 2)
+            apple = game.createSprite(randint(0, 4), randint(0, 4))
         }
     }
 })
