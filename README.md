@@ -1,84 +1,54 @@
-# BitOS for Micro:Bit
+# BitOS
 
-**BitOS** is a custom operating system for the BBC Micro:Bit that lets you run multiple apps (like a game, music maker, paint, messaging, and power off) from a single program! It uses a simple launcher menu to navigate through the apps, and offers a clean, interactive interface for each function.
+**BitOS** is a micro:bit operating system that includes several apps, designed for both fun and utility. Below are the apps currently included in BitOS:
+
+---
 
 ## Apps Included
 
 ### 1. **Paint**
-   - A simple drawing app where you can move a cursor to draw on the screen.
-   - The screen wraps around, so if the cursor moves off one edge, it reappears on the opposite edge (top, bottom, left, or right).
-   - Great for quick sketches and pixel art!
+   - Draw using the `A` and `B` buttons to move the cursor and mark pixels.
+   - Cursor movement is wrapped (i.e., it will move from one side to the other when going past the edges).
+   
+### 2. **GetMe**
+   - A simple game where you control the player to collect randomly placed apples.
+   - Use `A` to move right and `B` to move down. If you go off-screen, it wraps around.
 
-### 2. **GetMe (Game)**
-   - A simple game where you move a player to collect apples.
-   - The goal is to collect as many apples as possible.
-
-### 3. **MicroChat (Messaging)**
-   - A basic messaging app that lets you send `1` and `0` between devices.
-   - Use the radio feature to send messages between devices running BitOS.
+### 3. **MicroChat**
+   - A messaging app where you can send `0` and `1` to another micro:bit.
+   - Press `A` to send `0` and `B` to send `1`.
 
 ### 4. **MusicMaker**
-   - Play music by pressing **A**, **B**, or **A+B**.
-   - Each button press plays a different musical note.
-   - Includes a variety of simple tunes that can be played in the background.
+   - Press `A` and `B` to create sounds.
+   - Different combinations produce different musical notes.
 
-### 5. **Power Off (App)**
-   - Disables all button presses and clears the screen to simulate a "power off" state.
-   - To resume, simply press the reset button.
+### 5. **Cookie Clicker**
+   - **Gameplay:**
+     - Press `B` to add a cookie.
+     - Press `A+B` to view your cookie count (score).
+
+### 6. **Power Off**
+   - Press the **reset button** to turn off the system (disables inputs and clears the screen).
+
+---
 
 ## How to Use BitOS
 
-1. **Navigate the Menu:**
-   - Press **A** to scroll left.
-   - Press **B** to scroll right.
-   - Press **A+B** to select an app.
+1. **Press A to scroll left** and **B to scroll right** through the menu.
+2. **Press A+B** to select an app.
+3. The **Home button** (reset button on the back) can be used to return to the main menu from any app.
 
-2. **Switching Between Apps:**
-   - Each app runs individually. Press the **reset button** to return to the main menu.
+---
 
-3. **Paint App:**
-   - Use **A** and **B** to move the cursor.
-   - Press **A+B** to place a dot and draw.
-   - The screen **wraps around**: if the cursor goes off one edge, it reappears on the opposite edge.
+## How to Install BitOS
 
-4. **Play the Game (GetMe):**
-   - Use **A** to move right.
-   - Use **B** to move down.
-   - The goal is to collect the apple, which randomly spawns on the screen.
+1. Open the **MakeCode Micro:bit** editor: [https://makecode.microbit.org](https://makecode.microbit.org).
+2. Click on **Import** and then **Import URL**.
+3. Paste this URL: [https://github.com/Noahscratch493/BitOS/tree/master](https://github.com/Noahscratch493/BitOS/tree/master).
+4. Once loaded, you can use **WebUSB** to download it directly to your micro:bit (works on both v1 and v2).
+5. Alternatively, download the **.hex** file and drag it onto your micro:bit manually.
 
-5. **Send Messages (MicroChat):**
-   - Press **A** to send `0`, and **B** to send `1`. 
-   - The number sent will be displayed on the screen.
-   - Communicate with other Micro:Bits running BitOS via the radio.
+---
 
-6. **Music Maker:**
-   - Press **A**, **B**, or **A+B** to play different notes.
-   - Enjoy the simple music created from these notes!
-
-7. **Power Off:**
-   - Use this app to disable all inputs and clear the screen. This acts as a soft shutdown for the device.
-
-## Features
-
-- **Multiple Apps**: BitOS includes 5 apps (Paint, GetMe game, MicroChat, Music Maker, Power Off).
-- **Radio Support**: The messaging app allows communication between multiple Micro:Bits.
-- **Interactive Interface**: Navigate between apps with simple button presses and clear, responsive graphics.
-
-## Requirements
-
-- **BBC Micro:Bit** (Version 1 or 2)
-- **MakeCode**: BitOS is built using the MakeCode editor with JavaScript.
-- **Radio Group**: Set up radio communication to enable the messaging feature between devices.
-
-## Installation
-
-1. Download the BitOS `.hex` file.
-2. Drag and drop the file onto the Micro:Bit to upload the system.
-3. Once uploaded, the system will boot into the home menu, ready to be used.
-
-## Credits
-
-- **BBC Micro:Bit** for the hardware and platform.
-- **MakeCode** for the easy-to-use coding environment.
-
-Enjoy using BitOS and exploring the world of interactive apps on the Micro:Bit!
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
