@@ -22,12 +22,7 @@
    - Press `A` and `B` to create sounds.
    - Different combinations produce different musical notes.
 
-### 5. **Cookie Clicker**
-   - **Gameplay:**
-     - Press `B` to add a cookie.
-     - Press `A+B` to view your cookie count (score).
-
-### 6. **Power Off**
+### 5. **Power Off**
    - Press the **reset button** to turn off the system (disables inputs and clears the screen).
 
 ---
