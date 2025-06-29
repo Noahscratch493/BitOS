@@ -23,7 +23,7 @@
    - Different combinations produce different musical notes.
 
 ### 5. **Power Off**
-   - Press the **reset button** to turn off the system (disables inputs and clears the screen).
+   - Press **A+B** to turn off the system (disables inputs and clears the screen).
 
 ---
 
