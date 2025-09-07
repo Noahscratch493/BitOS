@@ -10,7 +10,7 @@
    - Draw using the `A` and `B` buttons to move the cursor and use `A+B` to mark pixels.
    - Cursor movement is wrapped (i.e., it will move from one side to the other when going past the edges).
    
-### 2. **GetMe**
+### 2. **Get the Apple!**
    - A simple game where you control the player to collect randomly placed apples.
    - Use `A` to move right and `B` to move down. If you go off-screen, it wraps around.
 
